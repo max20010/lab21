@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	string str;
+	char c;
+	cout << "Введите строку: ";
+	getline(cin,str);
+	int n = str.size(),x=0,min=n;
+	for (int i = 0;i < n;i++) {
+		if (str[i] == ' ') {
+			c = ' ';
+			x = 0;
+		}
+		else{
+			x++;
+			if (x==1) {
+				c = str[i];
+			}
+			if (str[i] == c && x!=1) {
+				str[i] = '.';
+			}
+		}
+	}
+	cout <<str << endl;
+}
