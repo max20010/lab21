@@ -5,8 +5,7 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	string str="C : \\Users\\Максим\\Desktop\\file.txt";
-	char name[50];
+	string str="C : \\Users\\Максим\\Desktop\\file.txt",name;
 	int x = str.size(),x1,x2;
 	for (int i = 0;i<x;i++) {
 		if (str[i] == '.') {
@@ -16,6 +15,7 @@ int main()
 			x1 = i;
 		}
 	}
+	name.resize(x2 - x1 - 1, ' ');
 	for (int i = x1+1,j=0;i < x2;i++,j++) {
 		name[j] = str[i];
 	}
